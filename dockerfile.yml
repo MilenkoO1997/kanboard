@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  kanboard:
+    image: kanboard/kanboard:latest
+    container_name: kanboard
+    ports:
+      - "80:80"
+    volumes:
+      - kanboard_data:/var/www/app/data
+    restart: unless-stopped
+
+volumes:
+  kanboard_data:
